@@ -1,10 +1,10 @@
-body{
+body {
     margin: 0;
+	padding: 0;
     font-size: 15px;
     line-height: 1.6;
 	flex-direction: column;
 }
-
 *,
 *:before,
 *:after {
@@ -16,13 +16,14 @@ h1, h2, h3, h4, h5, h6{
 
 /*контейнер инфо*/
 .container {
-    width: 100%;
     max-width: 100%;
     margin: 0 auto;
+	padding: 0 15px;
 	position: relative;
+	justify-content: space-between;
 }
 /*Фон*/
-.intro{
+.intro {
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -35,13 +36,10 @@ h1, h2, h3, h4, h5, h6{
 
 .intro-inner {
     width: 100%;
-    max-width: 980px;
     margin: 0 auto -90px;
     text-align: center;
-	
-	
 }
-.color-text{
+.color-text {
 	color:#ffa500;
 	font-size: 34px;
 }
@@ -50,6 +48,8 @@ h1, h2, h3, h4, h5, h6{
     line-height: 1.6;
 	font-size: 18px;
 }
+
+
 .intro-title:after {
 	content: "";
 	width: 60px;
@@ -58,15 +58,14 @@ h1, h2, h3, h4, h5, h6{
 	background:#fff;
 	font-size: 24px;
 }
-
 .suptitle {
 	font-size: 55px;
 	color:white;
 	text-transform: uppercase;
 	font-size: 34px;
 	text-align: center;
+	margin-top: 80px;
 }
-
 /*Шапка*/
 .header {
     width: 100%;
@@ -76,9 +75,8 @@ h1, h2, h3, h4, h5, h6{
     right: 0;
     left: 0;
     z-index: 1000;
-    
 }
-.overlay{
+.overlay {
 	background: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	top: 0;
@@ -88,33 +86,38 @@ h1, h2, h3, h4, h5, h6{
 	width: 100%;
     height: 100vh;
 }
- .header-inner{
+ .header-inner {
     display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
     align-items: center;
 	font-family: 'Montserrat', sans-serif;
 }
-
-.header-logo{
-    margin: 30px;
-    font-size: 30px;
+.header-logo {
+    font-size: 50px;
     font-weight: 700;
     color:#fff;
+	margin-left: 30px;
 }
+@media screen and (max-width: 950px) {
+	.header-logo {
+		font-size: 36px;
+	}
+}
+
 /*навигация*/
-.nav{
+.nav {
     font-size 14px;
-    text-transform: uppercase;  
+    text-transform: uppercase;
+	margin-left: 90px;
 }
-.nav-link{
-    display: inline-block;
+.nav-link {
+    display: inline-flex;
     vertical-align: top;
     margin: 0 15px;
     position: relative;
     color: #fff;
     text-decoration: none;
     transition: color .2s linear;
-    
 }
 .nav-link:after {
     content: "";
@@ -129,17 +132,14 @@ h1, h2, h3, h4, h5, h6{
     z-index: 1;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: orange;
-}   
-    
 }
-.nav-link:hover:after{
+.nav-link:hover:after {
     display: block;
 }
 /*--Кнопка--*/
-
-.button{
+.button {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
@@ -149,7 +149,11 @@ h1, h2, h3, h4, h5, h6{
 	justify-content: center;
 	text-align: center;
 }
-
+@media screen and (max-width: 450px) {
+	.button {
+		margin-top: 100px;
+	}
+}
 .arrow {
     width: 30px;
     height: 30px;
@@ -160,24 +164,51 @@ h1, h2, h3, h4, h5, h6{
 	text-align: center;
 	margin: 8px;
 }
-
 /*-------------------next page--------------*/
 
 .body-img {
-	margin: 0 auto;
-	height: 100%;
-	width: 100%;
+	max-width: 100%;
 	display: flex;
-	
+	background-size: 100%;
 } 
-.textcols{
-	width: 48%;
-	display: inline-block;
-	margin-left: 20px;
-	margin: 60px;
+.textcols {
+	width: 49%;
+}
+.flexible {
+	width: 100%;
+	height: auto;
+	margin: 50px;
+}
+@media screen and (max-width: 950px) {
+	.body-img{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+		background-color: #ffe4b5;
+	}
+	.subtitle {
+		text-align: center;
+		margin-top: -80px;
+	}
+	.border-bottom {
+		display: none;
+	}
+	.nav-intro2{
+		display: inline-block;
+	}
+	.textcols {
+		width: 100%;
+		float: left;
+		margin: 30px;
+		line-height: 1.3;
+	}
+	.flexible {
+		display: none;
+	}
 }
 .text3 {
-	font-size: 35px;	
+	font-size: 30px;	
 }
 
 .subtitle {
@@ -185,9 +216,13 @@ h1, h2, h3, h4, h5, h6{
 	text-transform: uppercase;
 }
 span {
-	font-size: 20px;
-	width: 100%;
-    height: 100vh;
+	font-size: 14px;
+}
+@media screen and (max-width: 950px) {
+	span {
+		font-size: 20px;
+		
+	}
 }
 .border-bottom {
 	float: left;
@@ -201,31 +236,29 @@ span {
 }
 .nav2 {
 	text-decoration: none;
-	
-	
 }
-.nav-intro2{
+.nav-intro2 {
 	line-height: 1.6;
 	font-size: 18px;
 	font-family: 'Cormorant Garamond', serif;
 	display: inline;
-	width: 500px;
 }
-.nav-link2{
+.nav-link2 {
 	color: black;
 	text-decoration: none;
 	margin: 0;
 	padding: 0;
-	font-size: 
 	width: 100%;
     height: 100vh;
-	
 }
 /*------------NEXT PAGE-----------*/
 .bg {
 	background: url(../img/03.jpg) no-repeat center;
 	background-size: 100%;
 	background-size:cover;
+	text-align: center;
+	justify-content: center;
+	display: flex;
 }
 .inform {
 	color: white;
@@ -235,7 +268,7 @@ span {
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	margin-top: 90px;
+	margin-top: 30px;
 }
 .personal {
 	background: rgba(0, 0, 0, 0.7);
@@ -245,36 +278,65 @@ span {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	width: 100%;
 	display: flex;
-	
 }
 .sub-text {
 	text-align: center;
+	justify-content: center;
 }
 .row {
+	max-width: 100%;
+	width: 100%;
 	display: flex;
+	justify-content: center;
 	text-align: center;
-	width: 90%;
 	color: white;
-	margin: 50px;
-	font-family: 'Quicksand', sans-serif;	
+	font-family: 'Quicksand', sans-serif;
+	flex-wrap: wrap;
+	margin-top: 100px;
+	margin-bottom: 80px;
 }
 .column {
-	margin: 30px;
+	width: 22%;
+	justify-content: space-between;
+	margin: auto;
+}
+@media screen and (max-width: 768px) {
+	.column {
+		width: 45%;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 500px) {
+	.column {
+		width: 90%;
+		justify-content: center;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 900px) {
+	.row {
+		margin-top: 40px;
+	}
 }
 .column-photo {
 	border-radius: 50%;
-	max-width: 100%;
-	max-height: 100%;
 	
 }
+.column-text {
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
 .border-inform {
-	display: inline-block;
+	display: inline-flex;
 	width: 5%;
 	height: 4px;
 	border-radius: 30px;
 	background-color: #ffa500;
+	text-align: center;
+	justify-content: center;
 }
 .border-intro {
 	display: inline-block;
@@ -285,12 +347,24 @@ span {
 	opacity: 0.4;
 	text-align: center;
 }
+@media screen and (max-width: 900px) {
+	.border-inform {
+		display: none;
+	}
+	.border-intro{
+		display: none;
+	}
+}
 /*------------NEXT PAGE-----------*/
 
 .information {
 	text-align: center;
 	margin: 0;
 	padding: 0;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .title4 {
 	text-align: center;
@@ -303,18 +377,40 @@ span {
 	font-family: 'Playfair Display', serif;
 	margin: 0 auto;
 	text-align: center;
-	width: 900px;
-	
-	
+	max-width: 100%;
+	width: 85%;
 }
 .row2 {
-	color: black;
+	max-width: 100%;
+	width: 100%;
 	display: flex;
-	
+	justify-content: center;
+	text-align: center;
+	flex-wrap: wrap;
 }
 .column2 {
-	margin: 30px;
-	text-align: center;
+	width: 22%;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+	.column2 {
+		width: 43%;
+		text-align: center;
+	}
+	.column-text{
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.column2 {
+		width: 90%;
+		justify-content: center;
+		text-align: center;
+	}
+	.column-text{
+		font-size: 22px;
+	}
 }
 .column-photo2 {
 	border-radius: 50%;
@@ -353,11 +449,12 @@ h4 {
 	border: 1px solid #000000;	
 }
 .footer {
-	width: 900px;
 	margin: 0 auto;
 	text-align: center;
+	max-width: 100%;
+	width: 70%;
+	flex-wrap: wrap;
 }
-
 .border-inform2 {
 	display: inline-block;
 	width: 60px;
@@ -377,38 +474,48 @@ h4 {
 	justify-content: center;
 	text-align: center;
 }
-.sup-title4{
+.sup-title4 {
 	font-size: 12px;
 	font-family: 'Playfair Display', serif;
 	margin: 0 auto;
 	text-align: center;
-	width: 900px;
+}
+@media screen and (max-width: 900px) {
+	.sup-title4 {
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.sup-title4 {
+		font-size: 18px;
+	}
 }
 .login {
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	flex-wrap: wrap;
+}
+input{
+	border-color: black;
+	border: 0.5;
+}
+.acc {
+	margin: 20px;
+	font-size: 18px;
 	
 }
-.acc{
-	margin: 0 auto;
-	font-size: 18px;
-}
-.email{
- height: 60%;	
-}
-.psw{
- height: 60%;	
-}
+
 .message-text {
-	display: flex;
+	margin-top: 40px;
+	max-width: 90%;
+	width: 90%;
 	text-align: center;
 	justify-content: center;
-	margin-top: 40px;
-	display: block;
+	display: flex;
 }
-.btn{
-	width: 900px;
+textarea{
+	border-color: black;
 }
 .button2 {
 	background: #ffa500;
@@ -418,7 +525,6 @@ h4 {
 	color: white;
 	text-align: center;
 	float: right;
-	display: block;
 }
 .dno {
 	background-color:darkslategray;
@@ -431,5 +537,4 @@ h4 {
 .footer2 {
 	color: white;
 	text-align: center;
-	width: 900px;
 }
